@@ -1,0 +1,33 @@
+<div class="page-country">
+    <section>
+        <div class="container container-country" *ngFor="let country of country$|async">
+            <div class="grid-container">
+                <img class="img-country" src="{{country.flags.svg}}" alt="{{country.name.common}}">
+                <div class="info">
+                    <h1 class="title-country">{{country.name.common}}</h1>
+                    <h3>Official name:<small class="text-props">{{country.name.official}}</small></h3>
+                    <h3>Region:<small class="text-props">{{country.region}}</small></h3>
+                    <h3>Capital:<small class="text-props">{{country.capital}}</small></h3>
+                    <ul class="list-country_borders">
+                        <h3>Borders:</h3>
+                        <li *ngFor="let brd of country.borders">{{ brd}},</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="another-info">
+                <ul class="list-params">
+                    <li><h4>Coat of arms:</h4><img src="{{country.coatOfArms.png}}" alt=""></li>
+                    <li><h4>Start number</h4><p class="phone">{{country.idd.root}}<span *ngFor="let numb of country.idd.suffixes"> {{numb}},</span></p></li>
+                    <li><h4>Population</h4><p>{{country.population}} people</p></li>
+                    <li><h4>Doment country</h4><p>{{country.tld[0]}}</p></li>
+                    <li><h4>Start week</h4><p>{{country.startOfWeek}}</p></li>
+                    <li><h4>Subregion</h4><p>{{country.subregion}}</p></li>
+                    <li><h4>Latitude</h4><p>{{country.capitalInfo.latlng[0]}}</p></li>
+                    <li><h4>Longitude</h4><p>{{country.capitalInfo.latlng[1]}}</p></li>
+                    <li><h4>Car index</h4><p>{{country.car.signs[0]}}</p></li>
+                    <li><h4>Map link</h4><a href="{{country.maps.googleMaps}}">{{country.maps.googleMaps}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

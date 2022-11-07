@@ -1,0 +1,21 @@
+<div class="container-search-bar">
+    <input class="search-input" type="text" placeholder="search" (input)="search(valueInp)" [(ngModel)]="valueInp" >
+    <div class="box alphavite box" >
+        <p>Alphavite:</p>
+        <select name="" id="" (change)="sorts(valueAlph)" [(ngModel)]="valueAlph">
+            <option value="1">A-Z</option>
+            <option value="2">Z-A</option>
+        </select>
+    </div>
+    <div class="box Region">
+        <p>Region:</p>
+        <select name="" id="" (change)="filtr(valueRegs)" [(ngModel)]="valueRegs">
+            <option value="All">All</option>
+            <option value="Europe">Europe</option>
+            <option value="Americas">Americas</option>
+            <option value="Asia">Asia</option>
+            <option value="Africa">Africa</option>
+            <option value="Oceania">Oceania</option>
+        </select>
+    </div>
+</div>

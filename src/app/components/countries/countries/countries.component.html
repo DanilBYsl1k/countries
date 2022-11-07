@@ -1,0 +1,19 @@
+<div class="page-countries">
+    <section>
+        <div class="container">
+            <app-search-bar (valueInput)="search($event)" (filterAlph)="sorts($event)" (valueReg)="filtr($event)"></app-search-bar>
+            <div class="loading-content" *ngIf='loadg$|async'>
+                <img src="assets/image/loading-flag.gif" alt="">
+                <h2>Loading...</h2>
+            </div>
+            <div class=" container" *ngIf='loadg$|async'>
+            </div>
+            <ul class="list-countries" >
+                <li class="country" *ngFor="let countries of countries$|async|searcPipe:searchValue">
+                    <img  src="{{countries.flags.png}}" alt="">
+                    <h2 [routerLink]="[countries.region,countries.cca2]"><a>{{countries.name.common}}</a></h2>
+                </li>
+            </ul>
+        </div>
+    </section>
+</div>
